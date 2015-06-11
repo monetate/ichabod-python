@@ -69,7 +69,7 @@ class IchabodClient(object):
             assert self.is_healthy(), "Ichabod not found at {}".format(self.url)
     
     def _make_health_request(self):
-        return requests.get('{}/health'.format(self.url), timeout=self.timeout)
+        return requests.get('{}health'.format(self.url), timeout=self.timeout)
         
     def _make_request(self, **kwargs):
         return requests.post(self.url, timeout=self.timeout, data=kwargs).json()
